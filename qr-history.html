@@ -1,0 +1,137 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Мои ссылки и QR коды</title>
+	<style></style>
+	<link href="static/css/history/common.css" rel="stylesheet">
+	<link href="static/css/history/qrs.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="static/favicon.ico">
+	<link href="static/css/common.css" rel="stylesheet">
+	<link href="static/css/parts/change_background.css" rel="stylesheet">
+	<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="static/js/qr-code-styling.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="menuPlaceholder" class="menu-placeholder" onclick="changeMenuState()">
+            <span>Меню</span>
+            <img id="menuPlaceholderImage" src="static/images/svg/normal/menu-placeholder-down.svg">
+        </div>
+        <div id="menu" class="menu">                
+            <a href="index.html">
+                <div class="index have-icon">
+                    <div>Линкер</div>    
+                    <img src="static/images/svg/bold/index.svg" alt="Линкер">
+                </div>
+            </a>
+            <a href="qr.html">
+                <div class="qr have-icon ">
+                    <div>QR-генератор</div>
+                    <img src="static/images/svg/normal/qr.svg" alt="QR-генератор">
+                </div>
+            </a>
+            <a href="urls-history.html">
+                <div class="history have-icon selected">
+                    <div>История</div>
+                    <img src="static/images/svg/normal/history.svg" alt="История">
+                </div>
+            </a>
+            <a href="price.html">
+                <div class="price have-icon ">
+                    <div>Тарифы</div>
+                    <img src="static/images/svg/normal/price.svg" alt="Тарифы">
+                </div>
+            </a>
+        </div>
+    </header>
+	<script src="static/js/base.js"></script>
+	<div class="content ">
+		<div class="frame">
+			<div class="title-bar">
+				<a href="urls-history.html">
+					<h1>Мои ссылки</h1> </a> <span>/</span>
+				<a href="qr-history.html">
+					<h1 class="bold">Мои QR-коды</h1> </a>
+			</div>
+			<div class="history">
+				<div class="list">
+					<div class="date-item">
+						<div class="date-title"> 12 февраля </div>
+					</div>
+					<div class="list-item">
+						<div class="left"> <img class="qr-icon" src="static/images/svg/bold/qr.svg">
+							<div class="original-url"> <a href="http://127.0.0.1:8000/https://www.youtube.com/">https://www.youtube.com/</a> </div>
+						</div>
+						<div class="right">
+							<p>12.02.2025 16:06</p>
+						</div>
+					</div>
+					<div class="date-item">
+						<div class="date-title"> 11 февраля </div>
+					</div>
+					<div class="list-item">
+						<div class="left"> <img class="qr-icon" src="static/images/svg/bold/qr.svg">
+							<div class="original-url"> <a href="http://127.0.0.1:8000/https://yandex.ru/search/?text=python+No+module+named+%27qr_code%27&amp;lr=213&amp;clid=2411726">https://yandex.ru/search/?text=python+No+module+named+%27qr_code%27&amp;lr=213&amp;clid=2411726</a> </div>
+						</div>
+						<div class="right">
+							<p>11.02.2025 18:09</p>
+						</div>
+					</div>
+					<div class="list-item">
+						<div class="left"> <img class="qr-icon" src="static/images/svg/bold/qr.svg">
+							<div class="original-url"> <a href="http://127.0.0.1:8000/https://yandex.ru/search/?text=python+No+module+named+%27qr_code%27&amp;lr=213&amp;clid=2411726">https://yandex.ru/search/?text=python+No+module+named+%27qr_code%27&amp;lr=213&amp;clid=2411726</a> </div>
+						</div>
+						<div class="right">
+							<p>11.02.2025 18:08</p>
+						</div>
+					</div>
+					<div class="list-item">
+						<div class="left"> <img class="qr-icon" src="static/images/svg/bold/qr.svg">
+							<div class="original-url"> <a href="http://127.0.0.1:8000/https://chatgpt.com/c/67ab8fd0-cea0-800b-81a6-1811cddaf192">https://chatgpt.com/c/67ab8fd0-cea0-800b-81a6-1811cddaf192</a> </div>
+						</div>
+						<div class="right">
+							<p>11.02.2025 18:05</p>
+						</div>
+					</div>
+					<div class="list-item">
+						<div class="left"> <img class="qr-icon" src="static/images/svg/bold/qr.svg">
+							<div class="original-url"> <a href="http://127.0.0.1:8000/http://127.0.0.1:8000/linker">http://127.0.0.1:8000/linker</a> </div>
+						</div>
+						<div class="right">
+							<p>11.02.2025 17:56</p>
+						</div>
+					</div>
+					<div class="list-item">
+						<div class="left"> <img class="qr-icon" src="static/images/svg/bold/qr.svg">
+							<div class="original-url"> <a href="http://127.0.0.1:8000/http://127.0.0.1:8000/linker">http://127.0.0.1:8000/linker</a> </div>
+						</div>
+						<div class="right">
+							<p>11.02.2025 17:45</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function changeMenuState() {
+		if(menu.hasAttribute("hidden")) {
+			menu.removeAttribute("hidden");
+			menuPlaceholderImage.setAttribute("src", "static/images/svg/normal/menu-placeholder-up.svg");
+		} else {
+			menu.setAttribute("hidden", "hidden");
+			menuPlaceholderImage.setAttribute("src", "static/images/svg/normal/menu-placeholder-down.svg");
+		}
+	}
+	// если placeholder отображается, скрываем меню
+	if(window.getComputedStyle(menuPlaceholder).display === 'none') {
+		menu.removeAttribute("hidden");
+	}
+	</script>
+</body>
+
+</html>

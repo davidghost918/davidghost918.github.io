@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Линкер</title>
+        <style></style>
+        <link href="static/css/index.css" rel="stylesheet">
+        <link href="static/css/parts/copy_alert.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <link href="static/css/common.css" rel="stylesheet">
+        <link href="static/css/parts/change_background.css" rel="stylesheet">
+        <link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="static/js/qr-code-styling.js"></script>
+    </head>
+    <body>
+        <div id="copyAlert" onclick="this.setAttribute('hidden', 'hidden')" hidden="">
+            <p>Ссылка скопирована в буфер обмена</p> <img src="static/images/svg/bold/cross_white.svg"> </div>
+            <header>
+                <div id="menuPlaceholder" class="menu-placeholder" onclick="changeMenuState()">
+                    <span>Меню</span>
+                    <img id="menuPlaceholderImage" src="static/images/svg/normal/menu-placeholder-down.svg">
+                </div>
+                <div id="menu" class="menu">                
+                    <a href="index.html">
+                        <div class="index have-icon selected">
+                            <div>Линкер</div>    
+                            <img src="static/images/svg/bold/index.svg" alt="Линкер">
+                        </div>
+                    </a>
+                    <a href="qr.html">
+                        <div class="qr have-icon ">
+                            <div>QR-генератор</div>
+                            <img src="static/images/svg/normal/qr.svg" alt="QR-генератор">
+                        </div>
+                    </a>
+                    <a href="urls-history.html">
+                        <div class="history have-icon ">
+                            <div>История</div>
+                            <img src="static/images/svg/normal/history.svg" alt="История">
+                        </div>
+                    </a>
+                    <a href="price.html">
+                        <div class="price have-icon ">
+                            <div>Тарифы</div>
+                            <img src="static/images/svg/normal/price.svg" alt="Тарифы">
+                        </div>
+                    </a>
+                </div>
+            </header>
+        <script src="static/js/base.js"></script>
+        <div class="content ">
+            <div class="index with-url">
+                <h1>Сокращение ссылок</h1>
+                <form method="POST" action="/linker/url/create">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="Cm3IQdYt7sNip3XTEMvNy3ePYFh4Bky1uBwwlsUMJEOrKx2rJ27CQTuX97oqMWbh">
+                    <input name="url" id="urlInputField" class="url" type="text" placeholder="Нажмите ctrl+v или вставьте ссылку" value="https://www.youtube.com/" autofocus=""> <img id="crossButton" class="cross-small" src="static/images/svg/normal/cross.svg">
+                    <input id="submitButton" type="submit" class="submit text-label active sky-hovered" value="Сократить"> </form>
+                <hr>
+                <div class="result">
+                    <div style="display: inline-block;">
+                        <div class="short-url"> <a id="shortUrlA" href="http://127.0.0.1:8000/RQwT6n">127.0.0.1:8000/RQwT6n</a>
+                            <br> <span id="copyInfoSpan">ссылка скопирована в буфер обмена</span> </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="gray-hovered" id="copyButton"> <img src="static/images/svg/bold/copy.svg"> </button>
+                    </div>
+                </div>
+                <script>
+                copyTextFallback(shortUrlA.innerHTML);
+                copyInfoSpan.removeAttribute("hidden");
+                submitButton.classList.add("active");
+                submitButton.classList.add("sky-hovered");
+                var isShareFrameHidden = true;
+                copyButton.addEventListener('click', function(event) {
+                    copyAlert.removeAttribute("hidden");
+                    copyTextFallback(shortUrlA.innerHTML);
+                    setTimeout(() => {
+                        copyAlert.setAttribute("hidden", "hidden");
+                    }, 3000);
+                })
+                </script>
+            </div>
+            <script src="static/js/index.js"></script>
+        </div>
+        <script>
+        function changeMenuState() {
+            if(menu.hasAttribute("hidden")) {
+                menu.removeAttribute("hidden");
+                menuPlaceholderImage.setAttribute("src", "static/images/svg/normal/menu-placeholder-up.svg");
+            } else {
+                menu.setAttribute("hidden", "hidden");
+                menuPlaceholderImage.setAttribute("src", "static/images/svg/normal/menu-placeholder-down.svg");
+            }
+        }
+        // если placeholder отображается, скрываем меню
+        if(window.getComputedStyle(menuPlaceholder).display === 'none') {
+            menu.removeAttribute("hidden");
+        }
+        </script>
+    </body>
+</html>
